@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ~ Copyright 2013 FuseSource ~ ~ Licensed under the Apache License, Version 
+	2.0 (the "License"); ~ you may not use this file except in compliance with 
+	the License. ~ You may obtain a copy of the License at ~ ~ http://www.apache.org/licenses/LICENSE-2.0 
+	~ ~ Unless required by applicable law or agreed to in writing, software ~ 
+	distributed under the License is distributed on an "AS IS" BASIS, ~ WITHOUT 
+	WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. ~ See the 
+	License for the specific language governing permissions and ~ limitations 
+	under the License. -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+	<!--*********************************Begin HornetQ Configuration **************************************** -->
+	<bean id="HISBroker" class="org.apache.camel.component.jms.JmsComponent">
+		<property name="configuration" ref="jmsConfig" />
+	</bean>
+
+	<bean id="jmsConfig" class="org.apache.camel.component.jms.JmsConfiguration">
+		<property name="connectionFactory" ref="${HIS.broker.connectionFactory}" />
+		<property name="transactionManager" ref="jmsTransactionManager" />
+		<property name="transacted" value="true" />
+		<property name="cacheLevelName" value="CACHE_CONNECTION" />
+	</bean>
+
+	<bean id="jmsTransactionManager"
+		class="org.springframework.jms.connection.JmsTransactionManager">
+		<property name="connectionFactory" ref="${HIS.broker.connectionFactory}" />
+	</bean>
+
+	<bean name="hornetQConnectionFactory" class="org.hornetq.jms.client.HornetQJMSConnectionFactory">
+		<constructor-arg index="0" type="boolean" value="false" />
+		<constructor-arg index="1">
+			<ref bean="transportConfiguration" />
+		</constructor-arg>
+	</bean>
+
+	<bean name="transportConfiguration" class="org.hornetq.api.core.TransportConfiguration">
+		<constructor-arg index="0" type="java.lang.String"
+			value="org.hornetq.core.remoting.impl.netty.NettyConnectorFactory" />
+		<constructor-arg index="1">
+			<map key-type="java.lang.String" value-type="java.lang.Object">
+				<entry key="host" value="${HIS.broker.hornetq.host}"></entry>
+				<entry key="port" value="${HIS.broker.hornetq.port}"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean name="activeMQConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<constructor-arg value="${HIS.broker.url}" />
+	</bean>
+
+	<!--**********************************END HornetQ Configuration ******************************************** -->
+
+	<!--**********************************Begin ActiveMQ Configuration ***************************************** -->
+	<!-- Once we switch to ActiveMQ, we can delete the section above this one 
+		and keep only this section -->
+	<!-- <bean id="HISBroker" class="org.apache.activemq.camel.component.ActiveMQComponent"> 
+		<property name="brokerURL" value="${HIS.broker.url}" /> </bean> -->
+	<!--**********************************END ActiveMQ Configuration ******************************************* -->
+
+	<bean id="orderProcessor"
+		class="com.sparc.myHealth.lis.hl7Handler.OrderProcessor" />
+
+	<bean id="embeddedBroker" class="org.apache.activemq.camel.component.ActiveMQComponent">
+		<property name="brokerURL" value="vm://localhost?async=false" />
+	</bean>
+
+	<camelContext trace="false" id="camelContext"
+		xmlns="http://camel.apache.org/schema/spring">
+		<route id="admit-in">
+			<from uri="HISBroker:queue://Consumer.LIS.VirtualTopic.OUT.HL7.ADT.A01" />
+			<log message=">>>> LIS Received Patient Admit Message: ${body}" />
+		</route>
+		<route id="order-in">
+			<from uri="HISBroker:queue://Consumer.LIS.VirtualTopic.OUT.HL7.ORM.O01" />
+			<log message=">>>> LIS Received Observation Request Message: ${body}" />
+			<to uri="bean:orderProcessor" />
+			<to uri="mock:observationResult" />
+			<log message=">>>> LIS Responding With Obeservation Result Message: ${body}" />
+			<to id="observationResultOut" uri="HISBroker:topic://VirtualTopic.IN.HL7.ORU.R01" />
+		</route>
+	</camelContext>
+
+</beans>

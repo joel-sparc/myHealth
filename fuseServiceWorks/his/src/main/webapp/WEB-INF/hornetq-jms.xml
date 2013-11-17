@@ -1,0 +1,55 @@
+<messaging-deployment xmlns="urn:jboss:messaging-deployment:1.0">
+    <hornetq-server>
+        <jms-destinations>
+            <jms-queue name="PatientQuery">
+                <entry name="PatientQuery"/>
+            </jms-queue>
+            <jms-queue name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.*">
+                <entry name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.*"/>
+            </jms-queue>
+            <jms-queue name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.1">
+                <entry name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.1"/>
+            </jms-queue>
+            <jms-queue name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.2">
+                <entry name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.2"/>
+            </jms-queue>
+            <jms-queue name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.3">
+                <entry name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.3"/>
+            </jms-queue>
+            <jms-queue name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.4">
+                <entry name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.4"/>
+            </jms-queue>
+            <jms-queue name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.5">
+                <entry name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.5"/>
+            </jms-queue>
+            <jms-queue name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.6">
+                <entry name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.6"/>
+            </jms-queue>
+            <jms-queue name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.7">
+                <entry name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.7"/>
+            </jms-queue>
+            <jms-queue name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.8">
+                <entry name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.8"/>
+            </jms-queue>
+            <jms-queue name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.9">
+                <entry name="Consumer.PCF.VirtualTopic.OUT.HL7.PATIENT.9"/>
+            </jms-queue>
+            <jms-queue name="Consumer.LIS.VirtualTopic.OUT.HL7.ADT.A01">
+                <entry name="Consumer.LIS.VirtualTopic.OUT.HL7.ADT.A01" />
+            </jms-queue>
+            <jms-queue name="Consumer.LIS.VirtualTopic.OUT.HL7.ORM.O01">
+                <entry name="Consumer.LIS.VirtualTopic.OUT.HL7.ORM.O01" />
+            </jms-queue>
+            <jms-topic name="VirtualTopic.IN.HL7.ADT.A01">
+                <entry name="VirtualTopic.IN.HL7.ADT.A01" />
+            </jms-topic>
+            <jms-topic name="VirtualTopic.IN.HL7.ORM.O01">
+                <entry name="VirtualTopic.IN.HL7.ORM.O01" />
+            </jms-topic>
+            <jms-topic name="VirtualTopic.IN.HL7.ORU.R01">
+                <entry name="VirtualTopic.IN.HL7.ORU.R01" />
+            </jms-topic>
+        </jms-destinations>
+    </hornetq-server>
+</messaging-deployment>
+

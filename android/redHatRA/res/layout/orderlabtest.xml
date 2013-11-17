@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white">
+    <TableLayout
+        android:layout_weight="8"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow
+            android:padding="2dp">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/black"
+                android:text="Patient ID" />
+            <EditText
+                android:id="@+id/patientIdTextView"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="textVisiblePassword"/>
+        </TableRow>
+        <TableRow
+            android:padding="2dp">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/black"
+                android:text="Test type" />
+            <Spinner
+                android:id="@+id/testTypeSpinner"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:id="@+id/placeOrderButton"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="200dp"
+        android:layout_height="64dp"
+        android:background="@drawable/button_selector"
+        android:text="Place Order" />
+</LinearLayout>

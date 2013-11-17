@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<switchyard xmlns="urn:switchyard-config:switchyard:1.0" xmlns:bean="urn:switchyard-component-bean:config:1.0" xmlns:camel="urn:switchyard-component-camel:config:1.0" xmlns:jms="urn:switchyard-component-camel-jms:config:1.0" xmlns:jpa="urn:switchyard-component-camel-jpa:config:1.0" xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:sql="urn:switchyard-component-camel-sql:config:1.0" xmlns:transform="urn:switchyard-config:transform:1.0" xmlns:validate="urn:switchyard-config:validate:1.0" name="his" targetNamespace="urn:com.sparc.myHealth:his:1.0">
+  <sca:composite name="his" targetNamespace="urn:com.sparc.myHealth:his:1.0">
+    <sca:component name="HISBean">
+      <bean:implementation.bean class="com.sparc.myHealth.his.HISBean"/>
+      <sca:service name="HISService">
+        <sca:interface.java interface="com.sparc.myHealth.his.HISService"/>
+      </sca:service>
+      <sca:reference name="AncillaryService">
+        <sca:interface.java interface="com.sparc.myHealth.his.AncillaryService"/>
+      </sca:reference>
+      <sca:reference name="PatientDataService">
+        <sca:interface.java interface="com.sparc.myHealth.his.persistence.PatientDataService"/>
+      </sca:reference>
+      <sca:reference name="PCFService">
+        <sca:interface.java interface="com.sparc.myHealth.his.PCFService"/>
+      </sca:reference>
+    </sca:component>
+    <sca:component name="AncillaryBean">
+      <bean:implementation.bean class="com.sparc.myHealth.his.AncillaryBean"/>
+      <sca:service name="AncillaryService">
+        <sca:interface.java interface="com.sparc.myHealth.his.AncillaryService"/>
+      </sca:service>
+    </sca:component>
+    <sca:service name="HospitalInformationSystem" promote="HISBean/HISService">
+      <sca:interface.java interface="com.sparc.myHealth.his.HospitalInformationSystem"/>
+      <jms:binding.jms name="JMS_PatientLookup">
+        <operationSelector operationName="handlePatientQueryMessage"/>
+        <jms:queue>PatientQuery</jms:queue>
+        <jms:connectionFactory>#ConnectionFactory</jms:connectionFactory>
+      </jms:binding.jms>
+      <jms:binding.jms name="JMS_Admit">
+        <operationSelector operationName="handlePatientAdmitMessage"/>
+        <jms:topic>VirtualTopic.IN.HL7.ADT.A01</jms:topic>
+        <jms:connectionFactory>#ConnectionFactory</jms:connectionFactory>
+      </jms:binding.jms>
+      <jms:binding.jms name="JMS_OBSERVATION_REQUEST">
+        <operationSelector operationName="handleObservationRequestMessage"/>
+        <jms:topic>VirtualTopic.IN.HL7.ORM.O01</jms:topic>
+        <jms:connectionFactory>#ConnectionFactory</jms:connectionFactory>
+      </jms:binding.jms>
+      <jms:binding.jms name="JMS_OBSERVATION_RESULT">
+        <operationSelector operationName="handleObservationResultMessage"/>
+        <jms:topic>VirtualTopic.IN.HL7.ORU.R01</jms:topic>
+        <jms:connectionFactory>#ConnectionFactory</jms:connectionFactory>
+      </jms:binding.jms>
+    </sca:service>
+    <sca:component name="PatientDataBean">
+      <bean:implementation.bean class="com.sparc.myHealth.his.persistence.PatientDataBean"/>
+      <sca:service name="PatientDataService">
+        <sca:interface.java interface="com.sparc.myHealth.his.persistence.PatientDataService"/>
+      </sca:service>
+    </sca:component>
+    <sca:component name="PCFServiceBean">
+      <bean:implementation.bean class="com.sparc.myHealth.his.PCFBean"/>
+      <sca:service name="PCFService">
+        <sca:interface.java interface="com.sparc.myHealth.his.PCFService"/>
+      </sca:service>
+    </sca:component>
+  </sca:composite>
+  <transforms/>
+  <validates>
+    <validate:validate.java name="java:ca.uhn.hl7v2.model.v26.message.QRY_A19" class="com.sparc.myHealth.his.hl7.HL7Validators"/>
+    <validate:validate.java name="java:ca.uhn.hl7v2.model.v26.message.ADR_A19" class="com.sparc.myHealth.his.hl7.HL7Validators"/>
+  </validates>
+  <domain>
+    <properties>
+      <property name="org.switchyard.handlers.messageTrace.enabled" value="false"/>
+    </properties>
+  </domain>
+</switchyard>
