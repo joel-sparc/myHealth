@@ -26,14 +26,16 @@ The **Ancillary Service** represents a specialized service provider. This could 
 
 Use Case 1
 --------
-In the first use case a patient is admited to the Patient Care Facility. As shown in the diagram below, patient information is submitted to the Patient Care Facility via a HAPI test panel (which is used to simulate a Patient Registration Application), stored by the Hospital Information System, and finally forwarded to the laboratory. The laboratory is synonymous with "Laboratory Information System" and is used in this architecture as an example ancillary service.
+In the first use case, a patient is admited to the Patient Care Facility. As shown in the diagram below, patient information is submitted to the Patient Care Facility via a HAPI test panel (which is used to simulate a Patient Registration Application), stored by the Hospital Information System, and finally forwarded to the laboratory. The "lab" in the diagram is a "Laboratory Information System" and is used in this architecture to provide an example ancillary service.
 
 ![Use Case 1](./useCase1.png "Use Case 1")
 
 
 Use Case 2
 --------
+In the second use case, a care giver requests a test from the lab. The request comes in to the Patient Care Facility from the Android client and is ultimately processed by the lab. Once the test has been performed, test results are sent back to the client. In order to build a more complete request, the Patient Care Facility calls upon the Hospital Information System's patient lookup service to provide additional patient information. In this demonstration, that additional patient information is simply the patient's last name which was stored in the database as part of the first use case.
 
+![Use Case 2](./useCase2.png "Use Case 2")
 
 
 
