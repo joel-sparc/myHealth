@@ -1,5 +1,9 @@
 My Health by JBoss
 ========
+Introduction
+--------
+This document outlines the basic application architecture, describes each of the two supported use cases, and provides a set of installation prerequisites. Each major component within this repository also contains a README file to provide component-level overviews and installation instructions.
+
 Overview
 --------
 The purpose of this application is to provide a reference architecture that demonstrates some features of Fuse 6, Fuse Service Works, and MQTT on Android. A medical setting was chosen for this demonstration and use cases were designed to exercise a cooperation between medical facilities and care givers. The diagram below outlines the major components and the basic relationships between them.
@@ -20,12 +24,16 @@ The **Ancillary Service** represents a specialized service provider. This could 
 
 
 
-This architecture currently supports the two specific use cases that are detailed in the following two sections.
-
 Use Case 1
 --------
-In the first use case, a patient is admited
+In the first use case a patient is admited to the Patient Care Facility. As shown in the diagram below, patient information is submitted to the Patient Care Facility via a HAPI test panel (which is used to simulate a Patient Registration Application), stored by the Hospital Information System, and finally forwarded to the laboratory. The laboratory is synonymous with "Laboratory Information System" and is used in this architecture as an example ancillary service.
+
+![Use Case 1](./useCase1.png "Use Case 1")
 
 
 Use Case 2
 --------
+
+
+
+
