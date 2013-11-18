@@ -9,6 +9,7 @@ The purpose of this application is to provide a reference architecture that demo
 
 The **Hospital Information System** is the central management application that coordinates the flow of information between Ancillary Services and Patient Care Facilities.
 
+The **Patient Registration Application** represents the software application that provides a way to enter information about newly admited patients into the Hospital Information System. In this architecture, the Patient Registration Application is hosted by the Patient Care Facility and employees of that facility are responsible for patient data entry.
 
 The **Patient Care Facility** represents a hospital-affiliated medical practice. This could be a family medical practice or a pediatric practice, for example. In real-world applications, multiple Patient Care Facilities would likely be connected to a network of one or more Hospital Information Systems.
 
