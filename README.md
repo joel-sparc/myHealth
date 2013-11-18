@@ -38,4 +38,27 @@ In the second use case, a care giver requests a test from the lab. The request c
 ![Use Case 2](./useCase2.png "Use Case 2")
 
 
+Installation Prerequisites
+--------
+
+Before beginning the installation process, the items in the list below should be installed.
+
+* Redhat Enterprise Linux 6 is the preferred OS (other Linux distributions may work)
+
+* Java JDK (1.6 or better)
+
+* Fuse IDE (the most recent version)
+
+* Git
+
+* MySQL Community Server
+
+* Apache Maven (3.0 or better)
+
+* [The settings.xml file](./settings.xml) from this folder should be copied to Maven's ~/.m2 folder.
+
+
+
+
+
 
