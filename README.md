@@ -1,5 +1,9 @@
 My Health by JBoss
 ========
+Introduction
+--------
+This document outlines the basic application architecture, describes each of the two supported use cases, and provides a set of installation prerequisites. Several of the folders within this repository also contain README files to provide component-level overviews and installation instructions.
+
 Overview
 --------
 The purpose of this application is to provide a reference architecture that demonstrates some features of Fuse 6, Fuse Service Works, and MQTT on Android. A medical setting was chosen for this demonstration and use cases were designed to exercise a cooperation between medical facilities and care givers. The diagram below outlines the major components and the basic relationships between them.
@@ -20,12 +24,41 @@ The **Ancillary Service** represents a specialized service provider. This could 
 
 
 
-This architecture currently supports the two specific use cases that are detailed in the following two sections.
-
 Use Case 1
 --------
-In the first use case, a patient is admited
+In the first use case, a patient is admited to the Patient Care Facility. As shown in the diagram below, patient information is submitted to the Patient Care Facility via a HAPI test panel (which is used to simulate a Patient Registration Application), stored by the Hospital Information System, and finally forwarded to the laboratory. The "lab" in the diagram is a "Laboratory Information System" and is used in this architecture to provide an example ancillary service.
+
+![Use Case 1](./useCase1.png "Use Case 1")
 
 
 Use Case 2
 --------
+In the second use case, a care giver requests a test from the lab. The request comes in to the Patient Care Facility from the Android client and is ultimately processed by the lab. Once the test has been performed, test results are sent back to the client. In order to build a more complete request, the Patient Care Facility calls upon the Hospital Information System's patient lookup service to provide additional patient information. In this demonstration, that additional patient information is simply the patient's last name which was stored in the database as part of the first use case.
+
+![Use Case 2](./useCase2.png "Use Case 2")
+
+
+Installation Prerequisites
+--------
+
+Before beginning the installation process, the items in the list below should be installed.
+
+* Redhat Enterprise Linux 6 is the preferred OS (other Linux distributions may work)
+
+* Java JDK (1.6 or better)
+
+* Fuse IDE (the most recent version)
+
+* Git
+
+* MySQL Community Server
+
+* Apache Maven (3.0 or better)
+
+* [The settings.xml file](./settings.xml) from this folder should be copied to Maven's ~/.m2 folder.
+
+
+
+
+
+
