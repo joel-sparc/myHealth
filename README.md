@@ -2,7 +2,7 @@ My Health by JBoss
 ========
 Introduction
 --------
-This document outlines the basic application architecture, describes each of the two supported use cases, and provides a set of installation prerequisites. Each major component within this repository also contains a README file to provide component-level overviews and installation instructions.
+This document outlines the basic application architecture, describes each of the two supported use cases, and provides a set of installation prerequisites. Several of the folders within this repository also contain README files to provide component-level overviews and installation instructions.
 
 Overview
 --------
