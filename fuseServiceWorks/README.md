@@ -28,7 +28,7 @@ In the \<base_dir\>/myHealth/fuseServiceWorks/jboss-eap-6.1/standalone/standalon
 
 From a terminal, enter the following:
 ```
-cd \<base_dir\>/myHealth/fuseServiceWorks
+cd \<base_dir\>/myHealth/fuseServiceWorks/his
 mvn package
 ```
 
