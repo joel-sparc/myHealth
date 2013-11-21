@@ -76,7 +76,7 @@ Before beginning the installation process, the items in the list below should be
 
 * Redhat Enterprise Linux 6 is the preferred OS (other Linux distributions may work)
 
-* Java JDK (1.6 or better)
+* Java JDK (1.6_18 or better)
 
 * Fuse IDE (the most recent version)
 
@@ -87,6 +87,8 @@ Before beginning the installation process, the items in the list below should be
 * Apache Maven (3.0 or better)
 
 * [The settings.xml file](./settings.xml) from this folder should be copied to Maven's ~/.m2 folder.
+
+Go ahead and clone (git clone) this repository into the directory of your choice. Throughout the remaining documentation, this directory will be referred as <base_dir>.
 
 
 
