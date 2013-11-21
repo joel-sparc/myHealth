@@ -41,7 +41,9 @@ Once the server has started, ensure that there are no errors by entering the fol
 JBossFuse:karaf@root>log:display
 
 ```
-Now install the pcf and lis features by entering the following command into the Karaf console
+###Install the pcf and lis features
+
+Enter the following commands into the Karaf console
 ```
 JBossFuse:karaf@root> features:addUrl mvn:com.sparc.myHealth/pcf-features/1.0.0-SNAPSHOT/xml/features
 JBossFuse:karaf@root> features:addUrl mvn:com.sparc.myHealth/lis-features/1.0.0-SNAPSHOT/xml/features
@@ -55,6 +57,8 @@ Ensure once again that there are no errors by entering the following command int
 JBossFuse:karaf@root>log:display
 
 ```
+
+Installation is complete. Use ctrl-d to stop the server.
 
 
 
