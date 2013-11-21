@@ -15,7 +15,7 @@ Before running the FSW installer, the MySQL Connector should be downloaded. Extr
 
 [Download a copy of Fuse Service Works 6.0 Beta](http://www.jboss.org/products/fsw.html)
 
-Run the installer, taking all of the defaults. Install into the \<base_dir\>/myHealth/fuseServiceWorks folder. On the "Post-Install Configuration" screen select the option to "Perform additional post-install configuration". Choose "Install JDBC driver" and install the MySQL driver using the connector jar that was installed earlier.
+Run the installer (java -jar jboss-eap-6.0.0.fsw.ci-installer.jar) and take all of the defaults throughout the installation process. Install into the \<base_dir\>/myHealth/fuseServiceWorks folder. On the "Post-Install Configuration" screen select the option to "Perform additional post-install configuration". Choose "Install JDBC driver" and install the MySQL driver using the connector jar that was installed earlier.
 
 In the end, there should be a new server directory named \<base_dir\>/myHealth/fuseServiceWorks/jboss-eap-6.1
 
@@ -47,12 +47,6 @@ From a terminal, enter the following while the server is running:
 ```
 cd \<base_dir\>/myHealth/fuseServiceWorks/his
 mvn jboss-as:deploy
-```
-
-Ensure once again that there are no errors by entering the following command into the Karaf console
-```
-JBossFuse:karaf@root>log:display
-
 ```
 
 Installation is complete.
