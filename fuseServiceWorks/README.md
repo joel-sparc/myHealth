@@ -23,6 +23,18 @@ In the end, there should be a new server directory named \<base_dir\>/myHealth/f
 
 In the \<base_dir\>/myHealth/fuseServiceWorks/jboss-eap-6.1/standalone/standalone-full.xml file, disable hornetq security by adding \<security-enabled\>false\</security-enabled\> to the \<hornetq-server\> element.
 
+In the \<base_dir\>/myHealth/fuseServiceWorks/jboss-eap-6.1/standalone/standalone-full.xml file, create the HISDS data source by adding the element shown below to the datasources element. The "user" and "password" values should be replaced with valid values.
+```
+<datasource jndi-name="java:jboss/datasources/HISDS" pool-name="HISDS" enabled="true" use-java-context="true">
+    <connection-url>jdbc:mysql://localhost:3306/HIS_DATA</connection-url>
+    <driver>mysql</driver>
+    <security>
+        <user-name>*user*</user-name>
+        <password>*password*</password>
+    </security>
+</datasource>
+```
+
 
 ### Build the HIS application
 
