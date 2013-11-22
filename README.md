@@ -91,6 +91,14 @@ Before beginning the installation process, the items in the list below should be
 Go ahead and clone (git clone) this repository into the directory of your choice. Throughout the remaining documentation, this directory will be referred as \<base_dir\>.
 
 
+A Note About ActiveMQ and HornetQ
+--------
+This reference architecture was designed to work with ActiveMQ as the message broker on the Patient Care Facility, the Hospital Information System, and ancillary services. However, the Beta version of JBoss Fuse Service Works 6.0 includes support for HornetQ exclusively and, as a result, the Hospital Information System currently uses HornetQ. This architecture was designed to make heavy use of virtual topics which are not directly supported by HornetQ. There are currently a few workarounds within the architecture that allow the original design to remain relevant while HornetQ is in use on the Hospital Information System. This is all temporary - the plan is to move the Hospital Information System to ActiveMQ when support for ActiveMQ comes to Fuse Service Works 6.0. 
+
+
+
+
+
 
 
 
