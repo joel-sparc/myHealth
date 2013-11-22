@@ -30,7 +30,7 @@ For example, if the local machine name is my.rhel.machine (use the hostname comm
 From a terminal, enter the following:
 ```
 cd \<base_dir\>/myHealth/fuse/
-mvn install
+mvn clean install
 ```
 This will build the two features and install them to the local maven repository.
 
@@ -63,6 +63,23 @@ Ensure once again that there are no errors by entering the following command int
 JBossFuse:karaf@root>log:display
 
 ```
+
+Ensure that all bundles are installed by entering the following command into the Karaf console
+```
+JBossFuse:karaf@root> osgi:list
+```
+The end of the list should show that the 8 required bundles are installed:
+```
+[ 240] [Active     ] [            ] [       ] [   60] The Netty Project (3.2.4.Final)
+[ 241] [Active     ] [            ] [       ] [   60] wrap_mvn_org.hornetq_hornetq-core_2.2.7.Final (0)
+[ 242] [Active     ] [            ] [       ] [   60] wrap_mvn_org.hornetq_hornetq-core-client_2.2.7.Final (0)
+[ 243] [Active     ] [            ] [       ] [   60] wrap_mvn_org.hornetq_hornetq-jms-client_2.2.7.Final (0)
+[ 244] [Active     ] [            ] [Started] [   60] HL7-in (1.0.0.SNAPSHOT)
+[ 245] [Active     ] [            ] [Started] [   60] Android-in (1.0.0.SNAPSHOT)
+[ 246] [Active     ] [            ] [Started] [   60] Android-out (1.0.0.SNAPSHOT)
+[ 247] [Active     ] [            ] [Started] [   60] HL7-Handler (1.0.0.SNAPSHOT)
+```
+
 
 Installation is complete. Use ctrl-d to stop the server.
 
