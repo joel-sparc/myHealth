@@ -35,6 +35,11 @@ From a terminal, enter the following:
 cd \<base_dir\>/myHealth/fuse/jboss-fuse-6.0.0.redhat-02
 ./bin/fuse
 ```
+Update the /etc/hosts file adding the name given to the local machine as a synonym of 127.0.0.1
+For example, if the local machine name is my.rhel.machine (use the hostname command to get the name of the local machine) then the hosts file would need an entry that looks similar to the one below.
+```
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4 my.rhel.machine
+```
 
 Once the server has started, ensure that there are no errors by entering the following command into the Karaf console
 ```
