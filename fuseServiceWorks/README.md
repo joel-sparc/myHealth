@@ -53,28 +53,21 @@ In the \<base_dir\>/myHealth/fuseServiceWorks/jboss-eap-6.1/standalone/standalon
 ```
 
 
-### Build the HIS application
-
-From a terminal, enter the following:
-```
-cd \<base_dir\>/myHealth/fuseServiceWorks/his
-mvn package
-```
-
-
 ### Start the JBoss Fuse Service Works 6.0 Beta Server
 
 From a terminal, enter the following:
 ```
-cd \<base_dir\>/myHealth/fuseServiceWorks/jboss-eap-6.1/standalone
+cd \<base_dir\>/myHealth/fuseServiceWorks/jboss-eap-6.1/bin
 ./standalone.sh -c standalone-full.xml
 ```
 
-###Deploy the HIS application
 
-From a terminal, enter the following while the server is running:
+### Build and deploy the HIS application
+
+From a terminal, enter the following:
 ```
 cd \<base_dir\>/myHealth/fuseServiceWorks/his
+mvn clean package
 mvn jboss-as:deploy
 ```
 
