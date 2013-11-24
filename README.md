@@ -84,7 +84,7 @@ Before beginning the installation process, the items in the list below should be
 
 * MySQL Community Server
 
-* Apache Maven (3.0 or better)
+* Apache Maven 3.0.5 ([later versions may not play well with the Android build](http://stackoverflow.com/questions/17293940/soap-enabler-maven-build-failure))
 
 * [The settings.xml file](./settings.xml) from this folder should be copied to Maven's ~/.m2 folder.
 
