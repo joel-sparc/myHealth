@@ -62,7 +62,7 @@ We now have a patient loaded in the database and can use the Android client to o
 ####Order a Test
 On the Android client, open the redHatRA application.
 
-Enter the URL of the Patient Care Facility in the upper text field. If the Patient Care Facility is running on localhost then the URL will be tcp://10.0.2.2:1883
+Enter the URL of the Patient Care Facility in the upper text field. If the Patient Care Facility is running on the same machine as the Android client then the URL of the Patient Care Facility will be tcp://10.0.2.2:1883
 
 Enter "9" in the lower text field to represent the ID of the patient and click the "connect" button. Note that this connection is per-patient and represents a vested interest in this patient. In a real-world scenario, several doctors and/or nurses would likely have a vested interest in the same patient and any given doctor or nurse would have a vested interest in multiple patients.
 
