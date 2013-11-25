@@ -88,7 +88,7 @@ Before beginning the installation process, the items in the list below should be
 
 * [The settings.xml file](./settings.xml) from this folder should be copied to Maven's ~/.m2 folder.
 
-Go ahead and clone (git clone) this repository into the directory of your choice. Throughout the remaining documentation, this directory will be referred as \<base_dir\>.
+Go ahead and clone (git clone) this repository into the directory of your choice. Throughout the remaining documentation, this directory will be referred to as \<base_dir\>.
 
 
 A Note About ActiveMQ and HornetQ
