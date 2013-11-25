@@ -2,7 +2,7 @@ My Health by JBoss
 ========
 Introduction
 --------
-This document outlines the basic application architecture, describes each of the two supported use cases, describes the message types used throughout the architecture, and provides a set of installation prerequisites. Several of the folders within this repository also contain README files to provide component-level overviews and installation instructions.
+This document outlines the basic application architecture, describes each of the two supported use cases, describes the message types used throughout the architecture, and provides a set of installation prerequisites. Several of the folders within this repository also contain README files to provide component-level overviews and installation instructions. After installation is complete, the [user's guide](./UsersGuide.md) in this folder will help to guide the reader through use cases.
 
 Overview
 --------
@@ -88,7 +88,7 @@ Before beginning the installation process, the items in the list below should be
 
 * [The settings.xml file](./settings.xml) from this folder should be copied to Maven's ~/.m2 folder.
 
-Go ahead and clone (git clone) this repository into the directory of your choice. Throughout the remaining documentation, this directory will be referred as \<base_dir\>.
+Go ahead and clone (git clone) this repository into the directory of your choice. Throughout the remaining documentation, this directory will be referred to as \<base_dir\>.
 
 
 A Note About ActiveMQ and HornetQ
