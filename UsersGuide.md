@@ -4,7 +4,7 @@ User's Guide
 This user's guide assumes that the reader has installed all prerequisites and system components using the appropriate installation guides.
 
 
-##Start the Hospital Information System
+####Start the Hospital Information System
 ```
 cd <BASE_DIR>/myHealth/fuseServiceWorks/jboss-eap-6.1/bin
 ./standalone.sh -c standalone-full.xml
@@ -12,18 +12,18 @@ cd <BASE_DIR>/myHealth/fuseServiceWorks/jboss-eap-6.1/bin
 
 
 
-##Start the Patient Care Facility and Laboratory Information System
+####Start the Patient Care Facility and Laboratory Information System
 ```
 cd <BASE_DIR>/myHealth/fuse/jboss-fuse-6.0.0.redhat-024
 ./bin/fuse
 ```
 
 
-##Start the Android client application
+####Start the Android client application
 In the FuseIDE, right click on the root-leval "android-client" folder and select Run As -> Android Application
 
 
-##Open the HAPI Test Panel
+####Open the HAPI Test Panel
 If Java Web Start has not been installed then install it
 ```
 su -c "yum -y install icedtea-web"
@@ -35,7 +35,7 @@ Click the "Create Samples" button
 
 Change the port number to 8888 on the default Sending Connection - this is the Patient Care Facility's MLLP port
 
-##Create the Patient Admit message
+####Create the Patient Admit message
 
 Click the Green "plus" icon in the "Messages" section on the left to add a new message.
 
@@ -53,13 +53,13 @@ Take a moment to look over the message. In the "PID" section on the second line 
 
 Note here also that, until the change is made to ActiveMQ, the only supported patient identifiers are the numbers 1 through 9. This restriction will be removed with the change to ActiveMQ.
 
-##Send the Patient Admit message
+####Send the Patient Admit message
 With the ADT A01 messasge selected, click the "Send" button at the top of the test panel.
 After the message is sent, the text area in the "Sending" tab should indicate that the message was sent and that a response was received.
 
 We now have a patient loaded in the database and can use the Android client to order a test from the lab.
 
-##Order a Test
+####Order a Test
 On the Android client, open the redHatRA application.
 
 Enter the URL of the Patient Care Facility in the upper text field. If the Patient Care Facility is running on localhost then the URL will be tcp://10.0.2.2:1883
