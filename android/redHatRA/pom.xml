@@ -11,7 +11,7 @@
 	<properties>
 		<platform.version>4.1.1.4</platform.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<android.sdk.path>?????????????????????????????</android.sdk.path>
+		<android.sdk.path>/home/joel/projects/myHealth/android/android-sdk-linux</android.sdk.path>
 		<hapi.version>2.1</hapi.version>
 	</properties>
 

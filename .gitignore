@@ -4,6 +4,14 @@ target
 .settings
 .project
 .classpath
+*~
 .DS_Store
 .DS_Store?
+id_file
 jboss*
+activemq-data
+android-sdk*
+android/redHatRA/project.properties
+android/redHatRA/bin
+android/redHatRA/gen
+android/redHatRA/lint.xml
