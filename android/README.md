@@ -60,7 +60,11 @@ Set the Android SDK location by going to Window -> Preferences -> Android
 
 Set the Android target platform by going to Window -> Preferences -> Android
 
-![Screen Shot](./sdkConfig.png "Set the target platform")
+Be sure to *click the apply button* and then click ok
+
+![Screen Shot](./setTarget.png "Set the target platform")
+
+Installation is complete. The client application should be up and running.
 
 
 **Note for NVIDIA users:** If an NVIDIA card is in use with the open source nouveau drivers then a libGL error may show up:
