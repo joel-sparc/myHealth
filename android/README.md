@@ -60,9 +60,9 @@ Set the Android SDK location by going to Window -> Preferences -> Android
 
 Set the Android target platform by going to Window -> Preferences -> Android
 
-Be sure to *click the apply button* and then click ok
-
 ![Screen Shot](./setTarget.png "Set the target platform")
+
+Be sure to **click the apply button** and then click ok on all open dialogs
 
 Installation is complete. The client application should be up and running.
 
