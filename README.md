@@ -4,6 +4,8 @@ Introduction
 --------
 This document outlines the basic application architecture, describes each of the two supported use cases, describes the message types used throughout the architecture, and provides a set of installation prerequisites. Several of the folders within this repository also contain README files to provide component-level overviews and installation instructions. After installation is complete, the [user's guide](./UsersGuide.md) in this folder will help to guide the reader through use cases.
 
+The contents of all README files have been consolidated into the three documents in the "documents" folder.
+
 Overview
 --------
 The purpose of this application is to provide a reference architecture that demonstrates some features of Fuse 6, Fuse Service Works, and MQTT on Android. A medical setting was chosen for this demonstration and use cases were designed to exercise cooperation between medical facilities and caregivers. The diagram below outlines the major components and the basic relationships between them.
