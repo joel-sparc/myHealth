@@ -6,7 +6,7 @@ This document outlines the basic application architecture, describes each of the
 
 Overview
 --------
-The purpose of this application is to provide a reference architecture that demonstrates some features of Fuse 6, Fuse Service Works, and MQTT on Android. A medical setting was chosen for this demonstration and use cases were designed to exercise a cooperation between medical facilities and care givers. The diagram below outlines the major components and the basic relationships between them.
+The purpose of this application is to provide a reference architecture that demonstrates some features of Fuse 6, Fuse Service Works, and MQTT on Android. A medical setting was chosen for this demonstration and use cases were designed to exercise cooperation between medical facilities and caregivers. The diagram below outlines the major components and the basic relationships between them.
 
 
 ![Overview Image](./overview.png "Reference Architecture Overview")
@@ -33,7 +33,7 @@ In the first use case, a patient is admited to the Patient Care Facility. As sho
 
 Use Case 2
 --------
-In the second use case, a care giver requests a test from the lab. The request comes in to the Patient Care Facility from the Android client and is ultimately processed by the lab. Once the test has been performed, test results are sent back to the client. In order to build a more complete request, the Patient Care Facility calls upon the Hospital Information System's patient lookup service to provide additional patient information. In this demonstration, that additional patient information is simply the patient's last name which was stored in the database as part of the first use case.
+In the second use case, a caregiver requests a test from the lab. The request comes in to the Patient Care Facility from the Android client and is ultimately processed by the lab. Once the test has been performed, test results are sent back to the client. In order to build a more complete request, the Patient Care Facility calls upon the Hospital Information System's patient lookup service to provide additional patient information. In this demonstration, that additional patient information is simply the patient's last name which was stored in the database as part of the first use case.
 
 ![Use Case 2](./useCase2.png "Use Case 2")
 
