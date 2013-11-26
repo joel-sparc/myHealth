@@ -29,7 +29,7 @@ For example, if the local machine name is my.rhel.machine (use the hostname comm
 
 From a terminal, enter the following:
 ```
-cd \<base_dir\>/myHealth/fuse/
+cd <base_dir>/myHealth/fuse/
 mvn clean install
 ```
 This will build the two features and install them to the local maven repository.
@@ -38,7 +38,7 @@ This will build the two features and install them to the local maven repository.
 
 From a terminal, enter the following:
 ```
-cd \<base_dir\>/myHealth/fuse/jboss-fuse-6.0.0.redhat-02
+cd <base_dir>/myHealth/fuse/jboss-fuse-6.0.0.redhat-02
 ./bin/fuse
 ```
 
