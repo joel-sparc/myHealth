@@ -57,7 +57,7 @@ In the \<base_dir\>/myHealth/fuseServiceWorks/jboss-eap-6.1/standalone/standalon
 
 From a terminal, enter the following:
 ```
-cd \<base_dir\>/myHealth/fuseServiceWorks/jboss-eap-6.1/bin
+cd <base_dir>/myHealth/fuseServiceWorks/jboss-eap-6.1/bin
 ./standalone.sh -c standalone-full.xml
 ```
 
@@ -66,7 +66,7 @@ cd \<base_dir\>/myHealth/fuseServiceWorks/jboss-eap-6.1/bin
 
 From a terminal, enter the following:
 ```
-cd \<base_dir\>/myHealth/fuseServiceWorks/his
+cd <base_dir>/myHealth/fuseServiceWorks/his
 mvn clean package
 mvn jboss-as:deploy
 ```
