@@ -78,6 +78,11 @@ The end of the list should show that the 7 required bundles are installed:
 ```
 
 
+
+Installation is complete. Use ctrl-d to stop the server.
+
+
+
 LIS Installation
 --------
 
