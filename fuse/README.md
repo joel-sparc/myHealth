@@ -25,7 +25,7 @@ For example, if the local machine name is my.rhel.machine (use the hostname comm
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4 my.rhel.machine
 ```
 
-### Build the pcf and lis features
+### Build the pcf feature
 
 From a terminal, enter the following:
 ```
