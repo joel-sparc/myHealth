@@ -25,6 +25,13 @@ For example, if the local machine name is my.rhel.machine (use the hostname comm
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4 my.rhel.machine
 ```
 
+Open ports 8888 and 1883
+```
+su -c “iptables -I INPUT -p tcp ––dport 8888 -j ACCEPT”
+su -c “iptables -I INPUT -p tcp ––dport 1883 -j ACCEPT”
+su -c “/sbin/service iptables save”
+```
+
 ### Build the pcf feature
 
 From a terminal, enter the following:
