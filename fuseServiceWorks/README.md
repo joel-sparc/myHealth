@@ -52,6 +52,11 @@ In the \<base_dir\>/myHealth/fuseServiceWorks/jboss-eap-6.1/standalone/standalon
 </datasource>
 ```
 
+Open port 5455
+```
+su -c “iptables -I INPUT -p tcp ––dport 5455 -j ACCEPT”
+su -c “/sbin/service iptables save”
+```
 
 ### Start the JBoss Fuse Service Works 6.0 Beta Server
 
